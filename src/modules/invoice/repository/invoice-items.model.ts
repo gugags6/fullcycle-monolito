@@ -16,12 +16,18 @@ import { InvoiceModel } from "./invoice.model";
     @Column({ allowNull: false })
     declare price: number;
   
-    @ForeignKey(() => InvoiceModel)
+    //@ForeignKey(() => InvoiceModel)
+    //@Column({ allowNull: false })
+    //declare invoice_id: string;
+  
+    //@BelongsTo(() => InvoiceModel)
+    //declare invoice: InvoiceModel;
+    @ForeignKey(() => require('./invoice.model').InvoiceModel)
     @Column({ allowNull: false })
     declare invoice_id: string;
   
-    @BelongsTo(() => InvoiceModel)
-    declare invoice: InvoiceModel;
+    @BelongsTo(() => require('./invoice.model').InvoiceModel)
+    declare invoice: InstanceType<any>;
   
 
   }

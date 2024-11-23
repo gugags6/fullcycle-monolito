@@ -34,7 +34,7 @@ type InvoiceProps = {
     }
   
     get items(): InvoiceItems[]{
-        return this.items
+        return this._items
     }
   
     get document(): string {
@@ -44,5 +44,7 @@ type InvoiceProps = {
     get address(): Address {
       return this._address
     }
+
+  
   
   }

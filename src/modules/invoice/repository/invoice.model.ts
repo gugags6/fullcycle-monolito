@@ -35,8 +35,10 @@ import { InvoiceItemsModel } from "./invoice-items.model"
     @Column({ allowNull: false })
     declare zipcode: string
 
-    @HasMany(() => InvoiceItemsModel)
-    declare items: InvoiceItemsModel[];
+    //@HasMany(() => InvoiceItemsModel)
+    //declare items: InvoiceItemsModel[];
+    @HasMany(() => require('./invoice-items.model').InvoiceItemsModel)
+    declare items: InstanceType<any>[];
   
     @Column({ allowNull: false })
     declare createdAt: Date

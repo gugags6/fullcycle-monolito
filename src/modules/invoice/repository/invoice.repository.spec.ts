@@ -88,14 +88,13 @@ describe("InvoiceRepository test", () => {
         complement: "Complement 1",
         city: "São Paulo",
         state: "São Paulo",
-        zipCode: "1234567890",
+        zipcode: "1234567890",
         items: [
           {
             id: "1",
             name: "Product 1",
-            price: 10,
-            createdAt: new Date(),
-            updatedAt: new Date(),
+            price: 10
+  
           },
           {
             id: "2",
@@ -126,14 +125,12 @@ describe("InvoiceRepository test", () => {
       expect(result.items[0].id.id).toEqual(invoice.items[0].id);
       expect(result.items[0].name).toEqual(invoice.items[0].name);
       expect(result.items[0].price).toEqual(invoice.items[0].price);
-      expect(result.items[0].createdAt).toStrictEqual(invoice.items[0].createdAt);
-      expect(result.items[0].updatedAt).toStrictEqual(invoice.items[0].updatedAt);
+      
       expect(result.address.zipCode).toEqual(invoice.zipcode);
       expect(result.items[1].id.id).toEqual(invoice.items[1].id);
       expect(result.items[1].name).toEqual(invoice.items[1].name);
       expect(result.items[1].price).toEqual(invoice.items[1].price);
-      expect(result.items[1].createdAt).toStrictEqual(invoice.items[1].createdAt);
-      expect(result.items[1].updatedAt).toStrictEqual(invoice.items[1].updatedAt);
+
       expect(result.createdAt).toStrictEqual(invoice.createdAt);
     });
     

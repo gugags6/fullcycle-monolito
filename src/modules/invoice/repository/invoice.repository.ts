@@ -17,7 +17,7 @@ export default class InvoiceRepository implements InvoiceGateway {
         complement: invoice.address.complement,
         city: invoice.address.city,
         state: invoice.address.state,
-        zipCode: invoice.address.zipCode,
+        zipcode: invoice.address.zipCode,
         items: invoice.items.map(item => ({
           id: item.id.id,
           name: item.name,
